@@ -1,0 +1,30 @@
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 241px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+  color: rgb(33, 37, 41);
+  font-family: "Roboto";
+}
+
+.search-input:focus {
+  border-color: #a0a0a0;
+}
+
+.shortcut-hint {
+  position: absolute;
+  right: 16px;
+  font-size: 12px;
+  color: #888;
+  user-select: none;
+}
