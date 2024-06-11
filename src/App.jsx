@@ -1,9 +1,12 @@
 import axios from "axios";
 import React from "react";
-import { useEffect, useState } from "react";
 import SearchBox from "./Components/SearchBox";
-import Table from "./Components/Table";
 import "./App.css";
+
+const apiUrl = import.meta.env.REACT_APP_API_URL;
+const apiKey = import.meta.env.REACT_APP_API_KEY;
+// const apiHost = import.meta.env.REACT_APP_API_HOST_KEY;
+const apiHost = import.meta.env.REACT_APP_API_KEY;
 
 function App() {
   // const staticData = [
@@ -23,11 +26,12 @@ function App() {
   const fetchCities = async (namePrefix) => {
     const options = {
       method: "GET",
-      url: "https://wft-geo-db.p.rapidapi.com/v1/geo/cities",
+      url: apiUrl || "https://wft-geo-db.p.rapidapi.com/v1/geo/cities",
       params: { countryIds: "IN", namePrefix: `${namePrefix}`, limit: "5" },
       headers: {
-        "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
-        "x-rapidapi-key": "4d35f6fb8emshcaf6f5d90be8d67p1919cejsn8dfd8cf9cd8f",
+        "x-rapidapi-host": apiHost || "wft-geo-db.p.rapidapi.com",
+        "x-rapidapi-key":
+          apiKey || "4d35f6fb8emshcaf6f5d90be8d67p1919cejsn8dfd8cf9cd8f",
       },
     };
 

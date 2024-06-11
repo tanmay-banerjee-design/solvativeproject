@@ -27,7 +27,6 @@ const SearchBox = ({
   };
 
   const getSuggestions = async (query) => {
-    console.log("query", query);
     setError(null);
     setLoading(true);
     try {
